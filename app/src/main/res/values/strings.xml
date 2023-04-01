@@ -3,4 +3,8 @@
     <string name="_1">1</string>
     <string name="clear">CLEAR</string>
     <string name="cero">0</string>
+    <string name="siete">7</string>
+    <string name="ocho">8</string>
+    <string name="cuatro">4</string>
+    <string name="cinco">5</string>
 </resources>

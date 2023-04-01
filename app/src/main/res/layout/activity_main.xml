@@ -17,8 +17,10 @@
         android:weightSum="25"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,16 +39,16 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:layout_weight="7"
+                    android:gravity="right"
                     android:maxLength="11"
                     android:maxLines="1"
                     android:padding="12dp"
                     android:paddingTop="20dp"
                     android:text="@string/cero"
-                    android:textSize="30sp"
-                    android:textColor="#000"
-                    android:gravity="right"
                     android:textAlignment="textEnd"
-                    tools:ignore="RtlCompat"/>
+                    android:textColor="#000"
+                    android:textSize="30sp"
+                    tools:ignore="RtlCompat" />
 
             </LinearLayout>
         </LinearLayout>
@@ -64,21 +66,27 @@
                 android:layout_marginRight="8dp"
                 android:layout_weight="9"
                 android:orientation="horizontal"
-                android:weightSum="4">
+                android:weightSum="5">
 
-                <TextView
-                    android:id="@+id/tvBox2"
+                <Button
+                    android:id="@+id/btBlanco"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
                     android:layout_weight="3"
-                    android:textSize="25sp" />
+                    android:background="@color/white"
+                    android:backgroundTint="#FFFFFF"
+                    android:textColorHighlight="#FFFEFE"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="25sp"
+                    app:strokeColor="#FFFFFF" />
+
 
                 <Button
                     android:id="@+id/btDel"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:text="@string/clear"
                     android:textSize="25sp" />
 
@@ -98,7 +106,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:text="7"
+                    android:text="@string/siete"
                     android:textSize="25sp" />
 
                 <Button
@@ -107,7 +115,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:text="8"
+                    android:text="@string/ocho"
                     android:textSize="25sp" />
 
                 <Button
@@ -143,7 +151,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:text="4"
+                    android:text="@string/cuatro"
                     android:textSize="25sp" />
 
                 <Button
@@ -152,7 +160,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:text="5"
+                    android:text="@string/cinco"
                     android:textSize="25sp" />
 
                 <Button
@@ -187,6 +195,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
+                    android:onClick="clickUno"
                     android:text="1"
                     android:textSize="25sp" />
 
