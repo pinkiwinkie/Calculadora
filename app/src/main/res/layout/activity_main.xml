@@ -8,16 +8,14 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="416dp"
-        android:layout_height="522dp"
+        android:layout_width="404dp"
+        android:layout_height="520dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="1dp"
         android:orientation="vertical"
         android:padding="15dp"
         android:weightSum="25"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -48,7 +46,7 @@
                     android:textAlignment="textEnd"
                     android:textColor="#000"
                     android:textSize="30sp"
-                    tools:ignore="RtlCompat" />
+                    tools:ignore="RtlCompat,RtlHardcoded" />
 
             </LinearLayout>
         </LinearLayout>
@@ -63,23 +61,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="9"
                 android:orientation="horizontal"
-                android:weightSum="5">
+                android:weightSum="5"
+                tools:ignore="NestedWeights">
 
                 <Button
                     android:id="@+id/btBlanco"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="@color/white"
                     android:backgroundTint="#FFFFFF"
-                    android:textColorHighlight="#FFFEFE"
-                    android:textColorHint="#FFFFFF"
-                    android:textColorLink="#FFFFFF"
-                    android:textSize="25sp"
-                    app:strokeColor="#FFFFFF" />
+                    android:textSize="25sp" />
 
 
                 <Button
@@ -87,6 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
+                    android:onClick="clickClear"
                     android:text="@string/clear"
                     android:textSize="25sp" />
 
@@ -95,7 +90,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="8"
                 android:orientation="horizontal"
                 android:weightSum="4">
@@ -104,8 +99,9 @@
                     android:id="@+id/bt7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:onClick="clickSiete"
                     android:text="@string/siete"
                     android:textSize="25sp" />
 
@@ -113,8 +109,9 @@
                     android:id="@+id/bt8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:onClick="clickOCho"
                     android:text="@string/ocho"
                     android:textSize="25sp" />
 
@@ -122,9 +119,10 @@
                     android:id="@+id/bt9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="9"
+                    android:onClick="clickNueve"
+                    android:text="@string/nueve"
                     android:textSize="25sp" />
 
                 <Button
@@ -132,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="/"
+                    android:text="@string/slash"
                     android:textSize="25sp" />
 
             </LinearLayout>
@@ -140,7 +138,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="6.5"
                 android:orientation="horizontal"
                 android:weightSum="4">
@@ -149,8 +147,9 @@
                     android:id="@+id/bt4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:onClick="clickCuatro"
                     android:text="@string/cuatro"
                     android:textSize="25sp" />
 
@@ -158,8 +157,9 @@
                     android:id="@+id/bt5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:onClick="clickCinco"
                     android:text="@string/cinco"
                     android:textSize="25sp" />
 
@@ -167,9 +167,10 @@
                     android:id="@+id/bt6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="6"
+                    android:onClick="clickSeis"
+                    android:text="@string/seis"
                     android:textSize="25sp" />
 
                 <Button
@@ -177,14 +178,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="*"
+                    android:text="@string/multiplicar"
                     android:textSize="25sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="7.2"
                 android:orientation="horizontal"
                 android:weightSum="4">
@@ -193,28 +194,30 @@
                     android:id="@+id/bt1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:onClick="clickUno"
-                    android:text="1"
+                    android:text="@string/uno"
                     android:textSize="25sp" />
 
                 <Button
                     android:id="@+id/bt2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="2"
+                    android:onClick="clickDos"
+                    android:text="@string/dos"
                     android:textSize="25sp" />
 
                 <Button
                     android:id="@+id/bt3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="3"
+                    android:onClick="clickTres"
+                    android:text="@string/tres"
                     android:textSize="25sp" />
 
                 <Button
@@ -224,7 +227,7 @@
                     android:layout_weight="1"
                     android:paddingTop="0dp"
                     android:paddingBottom="15dp"
-                    android:text="_"
+                    android:text="@string/resta"
                     android:textSize="25sp" />
 
             </LinearLayout>
@@ -232,7 +235,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="5"
                 android:orientation="horizontal"
                 android:weightSum="4">
@@ -241,27 +244,28 @@
                     android:id="@+id/btpunto"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="."
+                    android:text="@string/dot"
                     android:textSize="25sp" />
 
                 <Button
                     android:id="@+id/bt0"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="0"
+                    android:onClick="clickCero"
+                    android:text="@string/zero"
                     android:textSize="25sp" />
 
                 <Button
                     android:id="@+id/btEqu"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="="
+                    android:text="@string/equals"
                     android:textSize="25sp" />
 
                 <Button
@@ -269,7 +273,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="+"
+                    android:text="@string/plus"
                     android:textSize="25sp" />
             </LinearLayout>
         </LinearLayout>
@@ -278,15 +282,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="410dp"
-        android:layout_height="207dp"
+        android:layout_width="378dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="530dp"
         android:orientation="vertical"
         android:padding="15dp"
         android:weightSum="25"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -297,9 +302,10 @@
                 android:id="@+id/checkBox"
                 android:layout_width="374dp"
                 android:layout_height="match_parent"
-                android:text="Mostras opciones deshabilitar"
-                android:textSize="20sp"/>
+                android:text="@string/mostrar_opciones_deshabilitar"
+                android:textSize="20sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -309,26 +315,33 @@
                 android:id="@+id/radioButton1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Suma"
-                android:textSize="15sp"/>
+                android:layout_weight="1"
+                android:text="@string/suma"
+                android:textSize="15sp" />
+
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Resta"
-                android:textSize="15sp"/>
+                android:layout_weight="1"
+                android:text="@string/resta2"
+                android:textSize="15sp" />
+
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Multiplación"
-                android:textSize="15sp"/>
+                android:layout_weight="1"
+                android:text="@string/multiplaci_n"
+                android:textSize="15sp" />
+
             <RadioButton
                 android:id="@+id/radioButton4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="División"
-                android:textSize="15sp"/>
+                android:layout_weight="1"
+                android:text="@string/divisi_n"
+                android:textSize="15sp" />
         </LinearLayout>
 
     </LinearLayout>

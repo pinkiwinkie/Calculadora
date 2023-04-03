@@ -7,4 +7,21 @@
     <string name="ocho">8</string>
     <string name="cuatro">4</string>
     <string name="cinco">5</string>
+    <string name="nueve">9</string>
+    <string name="slash">/</string>
+    <string name="seis">6</string>
+    <string name="multiplicar">*</string>
+    <string name="uno">1</string>
+    <string name="dos">2</string>
+    <string name="tres">3</string>
+    <string name="resta">_</string>
+    <string name="dot">.</string>
+    <string name="zero">0</string>
+    <string name="equals">=</string>
+    <string name="plus">+</string>
+    <string name="mostrar_opciones_deshabilitar">Mostrar opciones deshabilitar</string>
+    <string name="suma">Suma</string>
+    <string name="resta2">Resta</string>
+    <string name="multiplaci_n">Multiplación</string>
+    <string name="divisi_n">División</string>
 </resources>
