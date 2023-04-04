@@ -95,11 +95,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickIgual(View view){
         TextView display = findViewById(R.id.tvBox);
-        number2 = Double.parseDouble(display.getText().toString());
+        String aux = display.getText().toString();
+
+
 
         if (operator.equals("+")){
             result = number1 + number2;
-            display.setText(display.getText() + " = " + result);
+            display.setText(aux + " = " + result);
         }
     }
     public void clickSuma(View view){
