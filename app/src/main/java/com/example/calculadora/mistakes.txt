@@ -1,0 +1,7 @@
+el problema que hay con el clickIgual es que como el operador suma
+pone en pantalla el numero 1 y el operador,
+cuando voy a obtener el numero 2 en pantalla tengo 1.0+1 por lo que eso es su num2.
+para solucionar esto:
+    1. obtener los caracteres que hayan despues del mas sin contar espacios.
+    2.guardarse la salida de los operadores en una variable, obtener el num 2
+        y luego concatenar ambos.

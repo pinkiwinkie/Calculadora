@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    Double number1,number2,result;
+    String operator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,8 +93,25 @@ public class MainActivity extends AppCompatActivity {
         display.setText("0");
     }
 
+    public void clickIgual(View view){
+        TextView display = findViewById(R.id.tvBox);
+        number2 = Double.parseDouble(display.getText().toString());
+
+        if (operator.equals("+")){
+            result = number1 + number2;
+            display.setText(display.getText() + " = " + result);
+        }
+    }
     public void clickSuma(View view){
         TextView display = findViewById(R.id.tvBox);
-        int num = Integer.parseInt(display.getText().toString());
+        operator="+";
+        getFirstNumber(view);
+        display.setText(number1 + operator);
+    }
+
+    public void getFirstNumber(View view){
+        TextView display = findViewById(R.id.tvBox);
+        number1 = Double.parseDouble(display.getText().toString());
+        display.setText("");
     }
 }
