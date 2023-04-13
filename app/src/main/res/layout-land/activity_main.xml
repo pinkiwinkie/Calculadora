@@ -9,28 +9,26 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="404dp"
-        android:layout_height="520dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="428dp"
+        android:layout_height="510dp"
         android:orientation="vertical"
         android:padding="15dp"
         android:weightSum="25"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="26dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:weightSum="7">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:weightSum="6">
+
                 <TextView
                     android:id="@+id/numbers"
                     android:layout_width="470dp"
@@ -46,6 +44,7 @@
                     android:textColor="#000"
                     android:textSize="30sp"
                     tools:ignore="RtlCompat,RtlHardcoded" />
+
                 <TextView
                     android:id="@+id/result"
                     android:layout_width="470dp"
@@ -78,18 +77,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="9"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:weightSum="5"
                 tools:ignore="NestedWeights">
 
                 <Button
                     android:id="@+id/btDel"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="220dp"
                     android:layout_weight="2"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickClear"
                     android:text="@string/clear"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
             </LinearLayout>
@@ -99,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="8"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:weightSum="4">
 
                 <Button
@@ -108,9 +107,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickSiete"
                     android:text="@string/siete"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -119,9 +118,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickOCho"
                     android:text="@string/ocho"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -130,9 +129,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickNueve"
                     android:text="@string/nueve"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -140,9 +139,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickDivision"
                     android:text="@string/slash"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
             </LinearLayout>
@@ -161,9 +160,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickCuatro"
                     android:text="@string/cuatro"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -172,9 +171,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickCinco"
                     android:text="@string/cinco"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -183,9 +182,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickSeis"
                     android:text="@string/seis"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -193,9 +192,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickProducto"
                     android:text="@string/multiplicar"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
             </LinearLayout>
 
@@ -213,9 +212,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickUno"
                     android:text="@string/uno"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -224,9 +223,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickDos"
                     android:text="@string/dos"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -235,9 +234,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickTres"
                     android:text="@string/tres"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -245,11 +244,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickResta"
                     android:paddingTop="0dp"
                     android:paddingBottom="15dp"
                     android:text="@string/resta"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
             </LinearLayout>
@@ -268,8 +267,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/dot"
                     android:backgroundTint="@color/rosa_claro"
+                    android:text="@string/dot"
                     android:textSize="25sp" />
 
                 <Button
@@ -278,9 +277,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickCero"
                     android:text="@string/zero"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -289,9 +288,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickIgual"
                     android:text="@string/equals"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
 
                 <Button
@@ -299,9 +298,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/rosa_claro"
                     android:onClick="clickSuma"
                     android:text="@string/plus"
-                    android:backgroundTint="@color/rosa_claro"
                     android:textSize="25sp" />
             </LinearLayout>
         </LinearLayout>
@@ -312,14 +311,11 @@
         android:id="@+id/linearLayout2"
         android:layout_width="378dp"
         android:layout_height="146dp"
-        android:layout_marginTop="530dp"
         android:orientation="vertical"
         android:padding="15dp"
         android:weightSum="25"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="406dp"
+        tools:layout_editor_absoluteY="258dp">
 
         <LinearLayout
             android:layout_width="wrap_content"

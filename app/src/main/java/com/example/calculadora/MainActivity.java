@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickCero (View view) {
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("0");
         else
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickUno (View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("1");
         else
@@ -32,56 +32,56 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickDos (View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("2");
         else
             display.setText(display.getText() + "2");
     }
     public void clickTres (View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("3");
         else
             display.setText(display.getText() + "3");
     }
     public void clickCuatro (View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("4");
         else
             display.setText(display.getText() + "4");
     }
     public void clickCinco (View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("5");
         else
             display.setText(display.getText() + "5");
     }
     public void clickSeis (View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("6");
         else
             display.setText(display.getText() + "6");
     }
     public void clickSiete (View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("7");
         else
             display.setText(display.getText() + "7");
     }
     public void clickOCho (View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("8");
         else
             display.setText(display.getText() + "8");
     }
     public void clickNueve (View view) {
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         if (display.getText().equals("0"))
             display.setText("9");
         else
@@ -89,30 +89,71 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickClear (View view) {
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         display.setText("0");
     }
 
+
     public void clickIgual(View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         String aux = display.getText().toString();
-
-
-
         if (operator.equals("+")){
+            String [] partes = aux.split("\\+");
+            number2 = Double.parseDouble(partes[1]);
+            // System.out.println(number2);
             result = number1 + number2;
             display.setText(aux + " = " + result);
+            System.out.println(result);
+        } else if (operator.equals("-")){
+            String [] partes = aux.split("-");
+            number2 = Double.parseDouble(partes[1]);
+            result = number1 - number2;
+            display.setText(aux + " = " + result);
+        }else if (operator.equals("*")){
+            String [] partes = aux.split("\\*");
+            number2 = Double.parseDouble(partes[1]);
+            result = number1 * number2;
+            display.setText(aux + " = " + result);
+        }else if (operator.equals("/")){
+            String [] partes = aux.split("/");
+            number2 = Double.parseDouble(partes[1]);
+            result = number1 / number2;
+            if (number2 == 0)
+                display.setText("No se puede dividir por cero");
+            else
+                display.setText(aux + " = " + result);
         }
     }
     public void clickSuma(View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         operator="+";
         getFirstNumber(view);
         display.setText(number1 + operator);
     }
 
+    public void clickResta(View view){
+        TextView display = findViewById(R.id.result);
+        operator="-";
+        getFirstNumber(view);
+        display.setText(number1 + operator);
+    }
+
+    public void clickProducto(View view){
+        TextView display = findViewById(R.id.result);
+        operator="*";
+        getFirstNumber(view);
+        display.setText(number1 + operator);
+    }
+
+    public void clickDivision(View view){
+        TextView display = findViewById(R.id.result);
+        operator="/";
+        getFirstNumber(view);
+        display.setText(number1 + operator);
+    }
+
     public void getFirstNumber(View view){
-        TextView display = findViewById(R.id.tvBox);
+        TextView display = findViewById(R.id.result);
         number1 = Double.parseDouble(display.getText().toString());
         display.setText("");
     }

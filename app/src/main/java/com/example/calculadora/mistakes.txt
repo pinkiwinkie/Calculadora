@@ -5,3 +5,39 @@ para solucionar esto:
     1. obtener los caracteres que hayan despues del mas sin contar espacios.
     2.guardarse la salida de los operadores en una variable, obtener el num 2
         y luego concatenar ambos.
+    Solucionado
+
+
+el problema que hay ahora es que cuando sumo dos cifras, me suma bien pero a la hora de
+mostrarlo por pantalla sale solo el primer numero.
+
+
+
+TextView display = findViewById(R.id.tvBox);
+        String aux = display.getText().toString();
+        if (operator.equals("+")){
+            String [] partes = aux.split("\\+");
+            number2 = Double.parseDouble(partes[1]);
+           // System.out.println(number2);
+            result = number1 + number2;
+            display.setText(aux + " = " + result);
+            System.out.println(result);
+        } else if (operator.equals("-")){
+            String [] partes = aux.split("-");
+            number2 = Double.parseDouble(partes[1]);
+            result = number1 - number2;
+            display.setText(aux + " = " + result);
+        }else if (operator.equals("*")){
+            String [] partes = aux.split("\\*");
+            number2 = Double.parseDouble(partes[1]);
+            result = number1 * number2;
+            display.setText(aux + " = " + result);
+        }else if (operator.equals("/")){
+            String [] partes = aux.split("/");
+            number2 = Double.parseDouble(partes[1]);
+            result = number1 / number2;
+            if (number2 == 0)
+                display.setText("No se puede dividir por cero");
+            else
+                display.setText(aux + " = " + result);
+        }
