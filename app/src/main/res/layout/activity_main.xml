@@ -268,8 +268,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:text="@string/dot"
                     android:backgroundTint="@color/rosa_claro"
+                    android:onClick="clickPunto"
+                    android:text="@string/dot"
                     android:textSize="25sp" />
 
                 <Button
@@ -331,22 +332,25 @@
                 android:layout_width="374dp"
                 android:layout_height="match_parent"
                 android:text="@string/mostrar_opciones_deshabilitar"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/layoutContainer"
+            android:visibility="invisible">
 
             <RadioButton
                 android:id="@+id/radioButton1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="clickPunto"
                 android:text="@string/suma"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="15sp" />
 
             <RadioButton
@@ -355,7 +359,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/resta2"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="15sp" />
 
             <RadioButton
@@ -364,7 +368,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/multiplaci_n"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="15sp" />
 
             <RadioButton
@@ -373,7 +377,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/divisi_n"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="15sp" />
         </LinearLayout>
 

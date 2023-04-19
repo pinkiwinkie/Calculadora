@@ -4,15 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Double number1,number2,result;
     String operator;
+    CheckBox cbOptions;
+    LinearLayout layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        cbOptions = findViewById(R.id.checkBox);
+        layout = findViewById(R.id.layoutContainer);
+
+      //  cbOptions.setButtonDrawable(R.drawable.checkbox_selector);
+        cbOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cbOptions.isChecked()){
+                    layout.setVisibility(View.VISIBLE);
+                } else
+                    layout.setVisibility(View.INVISIBLE);
+            }
+        });
     }
 
     public void clickCero (View view) {
@@ -87,41 +105,65 @@ public class MainActivity extends AppCompatActivity {
         else
             display.setText(display.getText() + "9");
     }
+    public void clickPunto (View view) {
+        TextView display = findViewById(R.id.result);
+        if (display.getText().equals("0"))
+            display.setText(".");
+        else
+            display.setText(display.getText() + ".");
+    }
 
     public void clickClear (View view) {
-        TextView display = findViewById(R.id.result);
-        display.setText("0");
+        TextView displayResult = findViewById(R.id.result);
+        TextView displayNumbers = findViewById(R.id.numbers);
+        displayResult.setText("0");
+        displayNumbers.setText("");
     }
 
 
     public void clickIgual(View view){
-        TextView display = findViewById(R.id.result);
-        String aux = display.getText().toString();
-        if (operator.equals("+")){
-            String [] partes = aux.split("\\+");
-            number2 = Double.parseDouble(partes[1]);
-            // System.out.println(number2);
-            result = number1 + number2;
-            display.setText(aux + " = " + result);
-            System.out.println(result);
-        } else if (operator.equals("-")){
-            String [] partes = aux.split("-");
-            number2 = Double.parseDouble(partes[1]);
-            result = number1 - number2;
-            display.setText(aux + " = " + result);
-        }else if (operator.equals("*")){
-            String [] partes = aux.split("\\*");
-            number2 = Double.parseDouble(partes[1]);
-            result = number1 * number2;
-            display.setText(aux + " = " + result);
-        }else if (operator.equals("/")){
-            String [] partes = aux.split("/");
-            number2 = Double.parseDouble(partes[1]);
-            result = number1 / number2;
-            if (number2 == 0)
-                display.setText("No se puede dividir por cero");
-            else
-                display.setText(aux + " = " + result);
+        TextView displayResult = findViewById(R.id.result);
+        TextView displayNumbers = findViewById(R.id.numbers);
+        String aux = displayResult.getText().toString();
+        switch (operator) {
+            case "+": {
+                String[] partes = aux.split("\\+");
+                number2 = Double.parseDouble(partes[1]);
+                // System.out.println(number2);
+                result = number1 + number2;
+                displayNumbers.setText(aux + " = ");
+                displayResult.setText("" + result);
+                System.out.println(result);
+                break;
+            }
+            case "-": {
+                String[] partes = aux.split("-");
+                number2 = Double.parseDouble(partes[1]);
+                result = number1 - number2;
+                displayNumbers.setText(aux + " = ");
+                displayResult.setText("" + result);
+                break;
+            }
+            case "*": {
+                String[] partes = aux.split("\\*");
+                number2 = Double.parseDouble(partes[1]);
+                result = number1 * number2;
+                displayNumbers.setText(aux + " = ");
+                displayResult.setText("" + result);
+                break;
+            }
+            case "/": {
+                String[] partes = aux.split("/");
+                number2 = Double.parseDouble(partes[1]);
+                result = number1 / number2;
+                if (number2 == 0)
+                    displayResult.setText("Indefinido");
+                else {
+                    displayNumbers.setText(aux + " = ");
+                    displayResult.setText("" + result);
+                }
+                break;
+            }
         }
     }
     public void clickSuma(View view){
