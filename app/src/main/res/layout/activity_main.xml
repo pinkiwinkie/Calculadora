@@ -344,17 +344,16 @@
             android:visibility="invisible">
 
             <RadioButton
-                android:id="@+id/radioButton1"
+                android:id="@+id/rbSuma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="clickPunto"
                 android:text="@string/suma"
                 android:textColor="@color/botones"
                 android:textSize="15sp" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rbResta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -363,7 +362,7 @@
                 android:textSize="15sp" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/rbProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -372,7 +371,7 @@
                 android:textSize="15sp" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/rbSlash"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

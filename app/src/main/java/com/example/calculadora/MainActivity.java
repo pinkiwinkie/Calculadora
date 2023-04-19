@@ -1,11 +1,15 @@
 package com.example.calculadora;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     String operator;
     CheckBox cbOptions;
     LinearLayout layout;
+    RadioButton rbSuma, rbResta, rbProduct, rbSlash;
+
+    Button bSuma, bResta, bProduct, bSlash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +27,18 @@ public class MainActivity extends AppCompatActivity {
 
         cbOptions = findViewById(R.id.checkBox);
         layout = findViewById(R.id.layoutContainer);
+        rbSuma = findViewById(R.id.rbSuma);
+        rbResta = findViewById(R.id.rbResta);
+        rbProduct = findViewById(R.id.rbProducto);
+        rbSlash = findViewById(R.id.rbSlash);
+        bSuma = findViewById(R.id.btSum);
+        bResta = findViewById(R.id.btRes);
+        bProduct = findViewById(R.id.btPro);
+        bSlash = findViewById(R.id.btDiv);
+
+        if (savedInstanceState != null){
+            ge
+        }
 
       //  cbOptions.setButtonDrawable(R.drawable.checkbox_selector);
         cbOptions.setOnClickListener(new View.OnClickListener() {
@@ -27,8 +46,41 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (cbOptions.isChecked()){
                     layout.setVisibility(View.VISIBLE);
-                } else
+                } else {
                     layout.setVisibility(View.INVISIBLE);
+                    rbSuma.setChecked(false);
+                    rbResta.setChecked(false);
+                    rbProduct.setChecked(false);
+                    rbSlash.setChecked(false);
+                }
+            }
+        });
+
+       rbSuma.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+               bSuma.setEnabled(!rbSuma.isChecked());
+           }
+       });
+        rbResta.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                bResta.setEnabled(!rbResta.isChecked());
+            }
+        });
+
+
+        rbProduct.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                bProduct.setEnabled(!rbProduct.isChecked());
+            }
+        });
+
+        rbSlash.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                bSlash.setEnabled(!rbSlash.isChecked());
             }
         });
     }
@@ -198,5 +250,14 @@ public class MainActivity extends AppCompatActivity {
         TextView display = findViewById(R.id.result);
         number1 = Double.parseDouble(display.getText().toString());
         display.setText("");
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putSerializable("result", result);
+        outState.putSerializable("n1", number1);
+        outState.putSerializable("n2", number2);
+        outState.putSerializable("operator", operator);
     }
 }

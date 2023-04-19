@@ -9,19 +9,23 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="428dp"
-        android:layout_height="510dp"
+        android:layout_width="312dp"
+        android:layout_height="383dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
         android:orientation="vertical"
         android:padding="15dp"
         android:weightSum="25"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="26dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:weightSum="7">
 
             <LinearLayout
@@ -76,29 +80,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_weight="9"
-                android:orientation="vertical"
-                android:weightSum="5"
-                tools:ignore="NestedWeights">
-
-                <Button
-                    android:id="@+id/btDel"
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:layout_weight="2"
-                    android:backgroundTint="@color/rosa_claro"
-                    android:onClick="clickClear"
-                    android:text="@string/clear"
-                    android:textSize="25sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_weight="8"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:weightSum="4">
 
                 <Button
@@ -268,6 +251,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/rosa_claro"
+                    android:onClick="clickPunto"
                     android:text="@string/dot"
                     android:textSize="25sp" />
 
@@ -311,11 +295,17 @@
         android:id="@+id/linearLayout2"
         android:layout_width="378dp"
         android:layout_height="146dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="113dp"
         android:orientation="vertical"
         android:padding="15dp"
         android:weightSum="25"
-        tools:layout_editor_absoluteX="406dp"
-        tools:layout_editor_absoluteY="258dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/btDel">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -327,52 +317,70 @@
                 android:layout_width="374dp"
                 android:layout_height="match_parent"
                 android:text="@string/mostrar_opciones_deshabilitar"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <RadioButton
-                android:id="@+id/radioButton1"
+                android:id="@+id/rbSuma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/suma"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="15sp" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rbResta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/resta2"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="15sp" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/rbProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/multiplaci_n"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="15sp" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/rbSlash"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/divisi_n"
-                android:textColor="@color/rosa_claro"
+                android:textColor="@color/botones"
                 android:textSize="15sp" />
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btDel"
+        android:layout_width="171dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="217dp"
+        android:layout_weight="2"
+        android:backgroundTint="@color/rosa_claro"
+        android:onClick="clickClear"
+        android:text="@string/clear"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
