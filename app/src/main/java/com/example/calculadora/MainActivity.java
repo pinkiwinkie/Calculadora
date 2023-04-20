@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rbSuma, rbResta, rbProduct, rbSlash;
 
     Button bSuma, bResta, bProduct, bSlash;
+
+    TextView operation, solution;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +37,11 @@ public class MainActivity extends AppCompatActivity {
         bResta = findViewById(R.id.btRes);
         bProduct = findViewById(R.id.btPro);
         bSlash = findViewById(R.id.btDiv);
+        operation = findViewById(R.id.numbers);
+        solution = findViewById(R.id.result);
 
         if (savedInstanceState != null){
-            ge
+            String result = savedInstanceState.getString("result");
         }
 
       //  cbOptions.setButtonDrawable(R.drawable.checkbox_selector);
