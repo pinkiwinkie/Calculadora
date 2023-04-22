@@ -41,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
         solution = findViewById(R.id.result);
 
         if (savedInstanceState != null){
-            String result = savedInstanceState.getString("result");
+            String solutionString = savedInstanceState.getString("solution");
+            String operationString = savedInstanceState.getString("operation");
+            solution.setText(solutionString);
+            operation.setText(operationString);
         }
 
       //  cbOptions.setButtonDrawable(R.drawable.checkbox_selector);
@@ -259,9 +262,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState){
         super.onSaveInstanceState(outState);
-        outState.putSerializable("result", result);
-        outState.putSerializable("n1", number1);
-        outState.putSerializable("n2", number2);
-        outState.putSerializable("operator", operator);
+        outState.putSerializable("solution", solution.getText().toString());
+        outState.putSerializable("operation", operation.getText().toString());
+
     }
 }
